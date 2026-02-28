@@ -51,3 +51,37 @@ This project includes specific optimizations for high-performance development:
 ## 📝 License
 
 This project is open-source and available under the MIT License.
+
+## 🧱 Starter Backend (Node.js)
+
+A minimal backend starter is included in `backend/server.js`.
+
+### Run backend
+
+```sh
+bun run backend
+```
+
+or with Node:
+
+```sh
+node backend/server.js
+```
+
+Server runs on `http://localhost:4000` by default.
+
+### Available API routes
+
+- `GET /api/health` → health check
+- `GET /api/expenses` → list expenses (in-memory)
+- `POST /api/expenses` → create expense
+
+Example request:
+
+```sh
+curl -X POST http://localhost:4000/api/expenses \
+  -H "Content-Type: application/json" \
+  -d '{"title":"Coffee","amount":4.5,"category":"Food"}'
+```
+
+> Note: This is intentionally starter-stage. Data is stored in memory and resets when the server restarts.
